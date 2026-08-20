@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<link rel="stylesheet" href="${request.contextPath}/static/css/blog.css"/>
+</h:head>
+<h:body class="center">
+<div class="centerDiv">
+	<h2>Posts</h2>
+	<h:form>
+		<h:dataTable value="#{postController.posts}" styleClass="order-table"
+			headerClass="order-table-header"
+			rowClasses="order-table-odd-row,order-table-even-row" var="post"
+			rendered="#{not empty postController.posts}">
+
+			<h:column>
+				<f:facet name="header">Id</f:facet>
+				<h:outputText value="#{post.id}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Title</f:facet>
+				<h:outputText value="#{post.title}" />
+			</h:column>
+
+			<h:column>
+
+				<h:commandButton action="#{postController.viewPost}"
+					image="/static/images/show.png" title="View Post">
+					<f:setPropertyActionListener target="#{postController.post}"
+						value="#{post}" />
+				</h:commandButton>
+			</h:column>
+
+			<h:column>
+				<h:commandButton action="#{postController.viewPostUpdate}"
+					image="/static/images/update.png" title="Update Post">
+					<f:setPropertyActionListener target="#{postController.post}"
+						value="#{post}" />
+				</h:commandButton>
+			</h:column>
+
+			<h:column>
+				<h:commandButton action="#{postController.removePost}"
+					image="/static/images/delete.png" title="Remove Post">
+					<f:setPropertyActionListener target="#{postController.post}"
+						value="#{post}" />
+				</h:commandButton>
+			</h:column>
+
+		</h:dataTable>
+	</h:form>
+	<h:outputText value="No posts at the moment"
+		rendered="#{empty postController.posts}" />
+	<br/><br/>
+	<h:form>
+		<h:commandLink style="margin-right: 20px"
+			action="#{postController.newPost}" value="New Post" />
+	</h:form>
+</div>
+</h:body>
+
+</html>

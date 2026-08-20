@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Update Post</title>
+	<link rel="stylesheet" href="${request.contextPath}/static/css/blog.css"/>
+</h:head>
+<body>
+	<div class="centerDiv">
+		<h1>Update Post</h1>
+		<t:saveState value="#{postController.post}" />
+	
+		<h:form>
+			<table>
+				<tr>
+					<td valign="top">Title: </td>
+					<td><h:inputText value="#{postController.post.title}" /></td>
+				</tr>
+				<tr>
+					<td valign="top">Body:</td>
+					<td><h:inputTextarea id="commentTxtArea"
+							value="#{postController.post.body}" cols="30" rows="10" /></td>
+				</tr>
+				<tr>
+					<td/>
+					<td><h:commandButton value="Update post" action="#{postController.updatePost}"/></td>
+				</tr>
+				<tr>
+					<td/>
+					<td><h:commandLink action="#{postController.listPosts}" value="All Posts" /></td>
+				</tr>
+			</table>
+		</h:form>
+	</div>
+</body>
+</html>
