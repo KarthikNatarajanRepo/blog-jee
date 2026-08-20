@@ -1,0 +1,6 @@
+/Users/karthik/code/blog-jee/blog-jee-api/src/main/java/br/com/flanders/blogjee/entities/Comment.java
+/Users/karthik/code/blog-jee/blog-jee-api/src/main/java/br/com/flanders/blogjee/entities/Post.java
+/Users/karthik/code/blog-jee/blog-jee-api/src/main/java/br/com/flanders/blogjee/entities/Role.java
+/Users/karthik/code/blog-jee/blog-jee-api/src/main/java/br/com/flanders/blogjee/entities/User.java
+/Users/karthik/code/blog-jee/blog-jee-api/src/main/java/br/com/flanders/blogjee/services/PostService.java
+/Users/karthik/code/blog-jee/blog-jee-api/src/main/java/br/com/flanders/blogjee/services/UserService.java

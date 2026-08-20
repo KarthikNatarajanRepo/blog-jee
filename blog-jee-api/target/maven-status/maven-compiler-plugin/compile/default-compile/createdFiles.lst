@@ -1,0 +1,6 @@
+br/com/flanders/blogjee/entities/Comment.class
+br/com/flanders/blogjee/entities/Role.class
+br/com/flanders/blogjee/services/PostService.class
+br/com/flanders/blogjee/services/UserService.class
+br/com/flanders/blogjee/entities/Post.class
+br/com/flanders/blogjee/entities/User.class
